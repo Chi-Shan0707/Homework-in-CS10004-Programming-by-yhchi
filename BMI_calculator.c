@@ -12,7 +12,6 @@ int main()
     printf("请输入您的体重（KG）: ");
     scanf("%f",&w); //输入weight
 
-
     //开始计算
     bmi=w/(h*h)*10000;//BMI=体重/身高平方
      

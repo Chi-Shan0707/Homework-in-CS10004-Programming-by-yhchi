@@ -16,7 +16,6 @@ int main()
         else if(a*a+b*b<c*c||b*b+c*c<a*a||c*c+a*a<b*b)printf("an obtuse-angled triangle.\n");
         else printf("an acute-angled triangle.\n");
         printf("That's all that I can tell you.");
-
     }
     else printf("Illegal triangle");
     return 0;

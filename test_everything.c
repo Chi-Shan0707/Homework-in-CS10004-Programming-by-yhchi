@@ -1,7 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int j;
+    int j,i;
+    double k;
+    j=2;
+    k=-2.4;
+    printf("%d\n",(int)(k));
+    printf("%d",j+=2);
+    
+    i=j+=2;
+    printf("%d ",i);
   //  scanf("%d", &j);
  //   for(int i=0;i<40;++i)printf("%d",i);
     int a[10];

@@ -10,10 +10,7 @@ int main()
             {
                 a=i/100,b=(i%100)/10,c=i%10;
                 num=a*a*a+b*b*b+c*c*c;
-                if(num==i)
-                {
-                    printf("%d ",i);
-                }
+                if(num==i){printf("%d ",i);}
                 ++i;
             }while (i<=999);
             break;
@@ -22,10 +19,7 @@ int main()
             {
                 a=i/100,b=(i%100)/10,c=i%10;
                 num=a*a*a+b*b*b+c*c*c;
-                if(num==i)
-                {
-                    printf("%d ",i);
-                }
+                if(num==i){printf("%d ",i);}
             }
             break;
         default:

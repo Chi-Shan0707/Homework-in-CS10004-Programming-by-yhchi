@@ -400,3 +400,7 @@ exit(EXIT_SUCCESS)
 ***
 int i=1;
 printf("%d %d,++i,--i)是什么东西,执行顺序？
+
+***
+
+*与&究竟是什么

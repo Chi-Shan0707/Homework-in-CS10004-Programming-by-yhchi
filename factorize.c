@@ -25,6 +25,7 @@ int main()
             if(i%p[j]==0){break;}
         }
     }
+    printf("%d",n);   
 //    for(int i=1;i<=p[0];++i)printf("%d ",p[i]);
     for(int i=1;i<=p[0];++i)
     {
@@ -34,7 +35,7 @@ int main()
             a[++a[0]]=p[i];
         }
     }
-    printf("n=%d",a[1]);
+    printf("=%d",a[1]);
     for(int i=2;i<=a[0];++i)printf("*%d",a[i]);
     return 0;
 }

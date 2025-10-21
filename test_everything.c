@@ -6,7 +6,7 @@ int main() {
     j=2;
     k=-2.4;
     printf("%d\n",(int)(k));
-    printf("%d",j+=2);
+    printf("%d",j++);
     
     i=j+=2;
     printf("%d ",i);

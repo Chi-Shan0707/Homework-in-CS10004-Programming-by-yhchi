@@ -15,7 +15,7 @@ int main()
     //x 为应税额
     switch((int)(x/1500))
     {
-        case 0:
+        case 0://错误在此
         case 1:
         //≤1500
             y=0.03*x;

@@ -1,13 +1,11 @@
 #include <stdio.h>
-
 int main() {
     int j,i;
     double k;
-    j=2;
-    k=-2.4;
-    printf("%d\n",(int)(k));
-    printf("%d",j++);
-    
+    char ch[1002];
+    scanf("%s",ch);
+    scanf_s("%s",ch);
+    fscanf("%s",ch);
     i=j+=2;
     printf("%d ",i);
   //  scanf("%d", &j);

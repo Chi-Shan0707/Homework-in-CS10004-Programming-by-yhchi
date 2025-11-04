@@ -3,16 +3,11 @@ int main() {
     int j,i;
     double k;
     char ch[1002];
-    scanf("%s",ch);
-    scanf_s("%s",ch);
-    fscanf("%s",ch);
-    i=j+=2;
-    printf("%d ",i);
-  //  scanf("%d", &j);
- //   for(int i=0;i<40;++i)printf("%d",i);
-    int a[10];
-    a[1]=10;
-    printf("%d",&a[1]);
+    char input[1002]={0};
+    input[0]='1';
+    puts(input);
+
+ 
     // printf("\n");
     // // 输出字符 'A'，并指定字段宽度为10
     // printf("%*c\n", 10, 'A');

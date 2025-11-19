@@ -1,13 +1,17 @@
 #include <stdio.h>
 int main() {
     int j,i;
+    int a,b,c;
     double k;
     char ch[1002];
     char input[1002]={0};
     input[0]='1';
     puts(input);
-
- 
+    a=1;
+    b=a*a++;
+    printf("a=%d b=%d\n",a,b);
+    c=++a+a;
+    printf("a=%d c=%d\n",a,c);
     // printf("\n");
     // // 输出字符 'A'，并指定字段宽度为10
     // printf("%*c\n", 10, 'A');

@@ -1,41 +1,22 @@
-#include <stdio.h>
-int main() {
-    int j,i;
-    int a,b,c;
-    double k;
-    char ch[1002];
-    char input[1002]={0};
-    input[0]='1';
-    puts(input);
-    a=1;
-    b=a*a++;
-    printf("a=%d b=%d\n",a,b);
-    c=++a+a;
-    printf("a=%d c=%d\n",a,c);
-    // printf("\n");
-    // // 输出字符 'A'，并指定字段宽度为10
-    // printf("%*c\n", 10, 'A');
-    
-    // // 输出字符 'B'，并指定字段宽度为5
-    // printf("%*c\n", 5, 'B');
-    
-    // // 输出字符 'X'，并指定字段宽度为1（实际上就是普通输出）
-    // printf("%*c\n", 1, 'X');
-    // printf("j=%5d\n",j);
-/*
-%*c 格式说明符：
-
-%c 是输出单个字符的格式说明符
-* 表示字段宽度由参数指定
-所以 %*c 的含义是：输出一个字符，但该字符占据的宽度由参数指定
-
-所以之后会增加一个参数
-*/
-    
-//    printf("\nstart");
-  //  printf("%*c",j,' ');
-    //printf("end");
-   // char c='376';
-   // printf("%d",c);
-    return 0;
+#include<stdio.h> 
+#include<string.h>
+char str[]="ABC";
+void pp(char *s,int k)
+{
+  int i;char c;
+  if(k==0)printf("%s\n",s);
+  else
+  {
+    for(i=k-1;i>=0;i--)
+    {
+      c=s[k-1];s[k-1]=s[i];s[i]=c;
+      pp(s,k-1);
+      c=s[k-1];s[k-1]=s[i];s[i]=c;
+    }
+  }
+}
+int main()
+{
+  pp(str,strlen(str));
+  return 0;
 }

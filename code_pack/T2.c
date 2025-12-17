@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct ListNode
 {
     int val;
@@ -22,7 +21,6 @@ ListNode* new_node(int v,int id)
     p->order_nxt=NULL;
     return p;
 }
-
 void append(ListNode* tail, ListNode* node) {
     ListNode *front=(tail->input_pre);
 
@@ -75,7 +73,6 @@ int main(void)
                 break;
             }
         }
-
     }
     for(ListNode* p=Order_Head.order_nxt;p!=&Order_Tail;p=p->order_nxt)
     {

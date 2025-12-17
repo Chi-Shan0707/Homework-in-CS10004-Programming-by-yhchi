@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct ListNode
 {
     int val;
@@ -139,7 +138,5 @@ int main(void) {
     print_list(&Head1,&Tail1);
     print_list(&Head2,&Tail2);
     print_list(&Head3,&Tail3);
-    
-
     return 0;
 }

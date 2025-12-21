@@ -3,6 +3,8 @@
 
 
 ## 目录
+- [define 和 typedef 的区别](#define-和-typedef-的区别)
+- [struct、union、enum](#structunionenum)
 - [编程范式](#编程范式)
 - [机器/汇编/高级语言](#机器汇编高级语言)
 - [进制表示](#进制表示)
@@ -169,12 +171,88 @@ scanf("%*d");
 int a = 168;
 float b = 123.456;
 float x = 35.567, y;
-/*
+
+***
+
+## define 和 typedef 的区别
+
+### 1. 作用和本质
+
+- `#define` 是**预处理指令**，在编译前的预处理阶段进行**简单文本替换**。
+- `typedef` 是**类型别名声明**，在编译阶段为类型起别名，不做文本替换。
+
+### 2. 替换时机
+
+- `#define` 的替换发生在**预处理阶段**，即编译器还未分析语法时，直接用文本替换。
+- `typedef` 的作用发生在**编译阶段**，编译器已知类型信息。
+
+### 3. 区别总结
+
+- `#define` 只是简单的字符串替换，不检查类型，容易出错。
+- `typedef` 只用于类型，能被编译器识别和检查。
+
+#### 示例
+
+```c
+#define INT_PTR int*
 %5d 右对齐输出 5 个字符宽度，不足前补空格（当 5 改成 2 时，仍然会输出正常的 168）
 %-5d 左对齐输出 5 个字符宽度，不足后补空格
 %+6.2f 输出 6 个字符宽度（其中 2 位小数）
 %E 输出科学计数法
 */
+
+> 英文思路：#define is a preprocessor macro for text replacement, typedef is a type alias at compile time. #define is error-prone for complex types, typedef is safer and type-aware.
+
+---
+
+## struct、union、enum
+
+### 1. struct（结构体）
+
+- 用于将不同类型的数据组合成一个整体。
+- 每个成员有独立的内存空间，大小为所有成员之和（含对齐）。
+
+```c
+struct Point {
+    int x;
+    int y;
+};
+```
+
+### 2. union（联合体）
+
+- 所有成员**共用同一块内存**，大小为最大成员的大小。
+- 任何时刻只能存储一个成员的值。
+
+```c
+union Data {
+    int i;
+    float f;
+    char c;
+};
+```
+
+### 3. enum（枚举）
+
+- 用于定义一组**具名整型常量**，默认从 0 开始递增。
+
+```c
+enum Color {
+    RED,
+    GREEN,
+    BLUE
+};
+```
+
+#### 总结
+
+- struct：组合多种类型，各成员独立。
+- union：节省空间，多成员共用一块内存。
+- enum：定义一组相关常量，增强代码可读性。
+
+> 英文思路：struct combines different types, union shares memory for different types, enum defines named integer constants.
+
+---
 printf(" a = %5d\n", a);
 printf(" a = %-5d\n", a);
 printf(" b = %6.2f\n", b); // %.2f 形式控制小数精度

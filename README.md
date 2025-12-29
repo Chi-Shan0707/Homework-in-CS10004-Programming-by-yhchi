@@ -142,7 +142,22 @@ int _n, _m;
 _n = (int)n; _m = (int)m;
 ```
 
-类型转化 `(int)(x)`。
+**显式**类型转化 `(int)(x)`。
+
+**隐式**类型转化
+- 整数提升（integer promotion）会把小整型提升为 int 或 unsigned int。
+- 不同精度的浮点/整数参与运算时，低精度向高精度转换。
+
+> 对隐式类型转换规则进一步说明：
+- 运算时，int类型最低，long double类型最高。
+-  short型和char型的运算分量必须先转换为int型才能运算。
+- 两个相同类型的数据(除short型和char型)可以直接运算，不需要类型转换。
+当两个不同类型的数据运算时，由系统自动转换。例如，一个int型数据与一个 double型数
+据运算，先要将int型数据转换为double型，才能与另一个double型数据运算，运算结果也是int
+
+int $\rhd$ unsigned int $\rhd$ long $\rhd$ unsigned long  $\rhd$ float  $\rhd$ double  $\rhd$ long double 
+$\uparrow$
+short 、char
 
 ***
 
@@ -170,6 +185,10 @@ scanf("%*d");
 int a = 168;
 float b = 123.456;
 float x = 35.567, y;
+%5d 右对齐输出 5 个字符宽度，不足前补空格（当 5 改成 2 时，仍然会输出正常的 168）
+%-5d 左对齐输出 5 个字符宽度，不足后补空格
+%+6.2f 输出 6 个字符宽度（其中 2 位小数）
+%E 输出科学计数法
 
 
 ```
@@ -196,11 +215,10 @@ float x = 35.567, y;
 
 ```c
 #define INT_PTR int*
-%5d 右对齐输出 5 个字符宽度，不足前补空格（当 5 改成 2 时，仍然会输出正常的 168）
-%-5d 左对齐输出 5 个字符宽度，不足后补空格
-%+6.2f 输出 6 个字符宽度（其中 2 位小数）
-%E 输出科学计数法
-*/
+typedef int ARRAY[100];
+```
+
+
 
 ```
 > 英文思路：#define is a preprocessor macro for text replacement, typedef is a type alias at compile time. #define is error-prone for complex types, typedef is safer and type-aware.
